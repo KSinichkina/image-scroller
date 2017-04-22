@@ -38,6 +38,7 @@
     gulp.task('build', ['copy','sass', 'clean'], function () {
         return gulp.src(getDefaultConcatList())
             .pipe(concat('main.js'))
+            .pipe(uglify())
             .pipe(gulp.dest('./dist/scripts'));
     });
 
